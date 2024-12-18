@@ -1,12 +1,12 @@
-name: Deploy to GitHub Pages
+name: Deploy React App to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Ana branch'ınıza her push yapıldığında çalışır
+      - main  # Ana branch'e her push yapıldığında çalışır
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,13 +19,23 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          echo "Installing dependencies..."
+          npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          echo "Building the project..."
+          npm run build
+
+      - name: List build directory
+        run: |
+          echo "Listing build directory..."
+          ls -la build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          allow_empty_commit: true
