@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/social-media-follower-track/static/css/main.9a20e289.css",
+    "main.js": "/social-media-follower-track/static/js/main.13668c65.js",
+    "index.html": "/social-media-follower-track/index.html",
+    "main.9a20e289.css.map": "/social-media-follower-track/static/css/main.9a20e289.css.map",
+    "main.13668c65.js.map": "/social-media-follower-track/static/js/main.13668c65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a20e289.css",
+    "static/js/main.13668c65.js"
+  ]
+}
